@@ -9,12 +9,12 @@ document.addEventListener ("DOMContentLoaded", () => {
 
         if(value.length < 5 || value.length > 20){
             spancito.style.color = "red";
-            spancito.style.background = "blue";
+            //spancito.style.background = "blue";
         }
 
         else{
             spancito.style.color = "black";
-            spancito.style.background = "blue";
+            //spancito.style.background = "blue";
         }
     });
 });
