@@ -1,7 +1,7 @@
 let Alumnos = [
     {
-        nombre: "Carlos",
-        apellido: "Palonsky",
+        nombre: "carlos",
+        apellido: "palonsky",
         dni: 46345678,
         anio: 4,
         curso: "A",
@@ -9,8 +9,8 @@ let Alumnos = [
     },
 
     {
-        nombre: "Carlos",
-        apellido: "Gernardo",
+        nombre: "carlos",
+        apellido: "gernardo",
         dni: 46755128,
         anio: 4,
         curso: "A",
@@ -18,8 +18,8 @@ let Alumnos = [
     },
 
     {
-        nombre: "Boris",
-        apellido: "Su",
+        nombre: "boris",
+        apellido: "su",
         dni: 45447698,
         anio: 5,
         curso: "A",
@@ -36,8 +36,8 @@ let Alumnos = [
     },
 
     {
-        nombre: "Micaela",
-        apellido: "Juan",
+        nombre: "micaela",
+        apellido: "juan",
         dni: 45006745,
         anio: 4,
         curso: "B",
@@ -45,8 +45,8 @@ let Alumnos = [
     },
 
     {
-        nombre: "Juli",
-        apellido: "Miso",
+        nombre: "juli",
+        apellido: "miso",
         dni: 45919137,
         anio: 4,
         curso: "B",
@@ -54,8 +54,8 @@ let Alumnos = [
     },
 
     {
-        nombre: "Vicente",
-        apellido: "Toro",
+        nombre: "vicente",
+        apellido: "toro",
         dni: 47475643,
         anio: 3,
         curso: "B",
@@ -63,8 +63,8 @@ let Alumnos = [
     },
 
     {
-        nombre: "Ignacio",
-        apellido: "Berardo",
+        nombre: "Iginacio",
+        apellido: "berardo",
         dni: 46871787,
         anio: 3,
         curso: "B",
@@ -75,19 +75,38 @@ let Alumnos = [
 
 //Ejercicio 2
 const capitalizar = (str) => {
-    Palabra = str[0].toUpperCase() + str.slice(1,);
-    return str;
+    MayusculaPalabra = str[0].toUpperCase(); 
+    RestoDePalabra = str.slice(1);
+    Palabra = MayusculaPalabra + RestoDePalabra;
+    return Palabra;
 }
-
-console.log(capitalizar("hola"));
+console.log(capitalizar("papa"));
 
 //Ejercicio 3
-const MostrarAlumno = (Alumno) => {
+const MostrarAlumno = (AlumnoIngresado) => {
     console.log(
-        "Nombre: " + Alumno[0],
-        "Apellido: " + Alumno[1],
-        "DNI: " + Alumno[2],
-        "Curso: " + Alumno[3,4],
-        "Nota: " + Alumno[5],
-    )
+        "Nombre: " + AlumnoIngresado.nombre,
+        "Apellido: " + AlumnoIngresado.apellido,
+        "DNI: " + AlumnoIngresado.dni,
+        "Curso: " + AlumnoIngresado.anio + "." + AlumnoIngresado.curso,
+        "Nota: " + AlumnoIngresado.nota,
+        )  
 }
+console.log(MostrarAlumno(Alumnos[0]));
+
+//Ejercicio 4
+let ArrayCapitalizado = Alumnos.map(function (x){
+    return capitalizar(x.nombre) +" "+ capitalizar(x.apellido);
+
+});
+console.log(ArrayCapitalizado);
+
+//Ejercicio 5
+let ArrayMostrarAlumnos = Alumnos.map(function (x){
+    return "Nombre: " + x.nombre,
+    "Apellido: " + x.apellido,
+    "DNI: " + x.dni,
+    "Curso: " + x.anio + "." + x.curso,
+    "Nota: " + x.nota;
+});
+console.log(ArrayMostrarAlumnos);
