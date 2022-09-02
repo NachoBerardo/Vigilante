@@ -103,10 +103,18 @@ console.log(ArrayCapitalizado);
 
 //Ejercicio 5
 let ArrayMostrarAlumnos = Alumnos.map(function (x){
-    return "Nombre: " + x.nombre,
-    "Apellido: " + x.apellido,
-    "DNI: " + x.dni,
-    "Curso: " + x.anio + "." + x.curso,
-    "Nota: " + x.nota;
+    return "Nombre: " + x.nombre + " Apellido: " + x.apellido + " DNI: " + x.dni + " Curso: " + x.anio + "." + x.curso + " Nota: " + x.nota;
 });
 console.log(ArrayMostrarAlumnos);
+
+//Ejercicio 6
+let AlumnosAprobados = Alumnos.filter(function (Aprobado){
+    return Aprobado.nota >= 6;
+});
+console.log(AlumnosAprobados);
+
+//Ejercicio 7
+let AlumnosCuartoAnio = Alumnos.filter(function (CuartoAnio){
+    return CuartoAnio.anio === 4;
+});
+console.log(AlumnosCuartoAnio);
