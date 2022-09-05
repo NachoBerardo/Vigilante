@@ -86,43 +86,32 @@ console.log(capitalizar("papa"));
 //Ejercicio 3
 
 const MostrarAlumno = (AlumnoIngresado) => {
-    return "Nombre: " + AlumnoIngresado.nombre + " Apellido: " + AlumnoIngresado.apellido + " DNI: " + AlumnoIngresado.dni + " Curso: " + AlumnoIngresado.anio + "." + AlumnoIngresado.curso + "Nota: " + AlumnoIngresado.nota;
+    console.log(" DNI: " + AlumnoIngresado.dni.toString().slice(0, 2) + "." + AlumnoIngresado.dni.toString().slice(2, 5) + "." + AlumnoIngresado.dni.toString().slice(5) +"\n Nombre y apellido: " + AlumnoIngresado.nombre + " " + AlumnoIngresado.apellido +  "\n Curso: " + AlumnoIngresado.anio + "°" + AlumnoIngresado.curso + "\n Nota: " + AlumnoIngresado.nota);
 };
 console.log("Ejercicio 3");
-console.log(MostrarAlumno(Alumnos[6]));
+MostrarAlumno(Alumnos[6]);
 
 //Ejercicio 4
-let ArrayCapitalizado = Alumnos.map(function (x){
-    return capitalizar(x.nombre) +" "+ capitalizar(x.apellido);
+ Alumnos.map((e) => capitalizar(e.nombre) && capitalizar(e.apellido));
+     
 
-});
-console.log("Ejercicio 4");
-console.log(ArrayCapitalizado);
 
 //Ejercicio 5
-let ArrayMostrarAlumnos = Alumnos.map(function (y){
-    return MostrarAlumno(y);
-});
 console.log("Ejercicio 5");
-console.log(ArrayMostrarAlumnos);
+let ArrayMostrarAlumnos = Alumnos.map((e) => MostrarAlumno(e));
+
 
 //Ejercicio 6
-let AlumnosAprobados = Alumnos.filter(function (Aprobado){
-    return Aprobado.nota >= 6;
-});
 console.log("Ejercicio 6");
-console.log(AlumnosAprobados);
+let AlumnosAprobados = Alumnos.filter((e) => e.nota >= 6);
+AlumnosAprobados.map((y) => MostrarAlumno(y));
 
 //Ejercicio 7
-let AlumnosCuartoAnio = Alumnos.filter(function (CuartoAnio){
-    return CuartoAnio.anio === 4;
-});
 console.log("Ejercicio 7");
-console.log(AlumnosCuartoAnio);
+let AlumnosCuartoAnio = Alumnos.filter((e) => e.curso === "B");
+AlumnosCuartoAnio.map((y) => MostrarAlumno(y));
 
 //Ejercicio 8
-let AlumnosCursoB = Alumnos.filter(function (CursoB){
-    return CursoB.curso === "B";
-});
 console.log("Ejercicio 8");
-console.log(AlumnosCursoB);
+let AlumnosB = Alumnos.filter((e) => e.anio === 4);
+AlumnosB.map((y) => MostrarAlumno(y));
