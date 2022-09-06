@@ -92,8 +92,11 @@ console.log("Ejercicio 3");
 MostrarAlumno(Alumnos[6]);
 
 //Ejercicio 4
- Alumnos.map((e) => capitalizar(e.nombre) && capitalizar(e.apellido));
-     
+ Alumnos.map((e) =>{
+
+    e.nombre= capitalizar(e.nombre); 
+    e.apellido= capitalizar(e.apellido);
+});     
 
 
 //Ejercicio 5
